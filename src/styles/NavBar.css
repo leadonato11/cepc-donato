@@ -1,8 +1,6 @@
 img {
     width: 20px;
     transition: .3s ease;
-/*     float: right; */
-/*     padding: 10px; */
 }
 
 img:hover {
