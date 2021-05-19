@@ -1,0 +1,15 @@
+img {
+    width: 20px;
+    transition: .3s ease;
+/*     float: right; */
+/*     padding: 10px; */
+}
+
+img:hover {
+    width: 23px;
+    cursor: pointer;
+}
+
+.MuiToolbar-root {
+    justify-content: space-between;
+}
