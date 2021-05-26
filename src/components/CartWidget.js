@@ -1,13 +1,9 @@
-import CartIcon from "../assets/icons/shoppingCart.svg"
-import NavBar from "../styles/NavBar.css"
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import "../styles/NavBar.css"
 
 const CartWidget = () => {
-    return (
-        <>
-          <div>
-            <img className={NavBar} src={CartIcon} alt="" />
-          </div>
-        </>
+  return (
+    <ShoppingCartIcon />
   )
 }
 

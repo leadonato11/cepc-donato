@@ -1,13 +1,11 @@
-img {
+svg {
     width: 20px;
     transition: .3s ease;
+    transform: scale(1);
 }
 
-img:hover {
-    width: 23px;
+svg:hover {
+    transform: scale(1.1);
+    transition: .3s ease;
     cursor: pointer;
-}
-
-.MuiToolbar-root {
-    justify-content: space-between;
 }
