@@ -1,4 +1,4 @@
-import { CircularProgress, LinearProgress } from "@material-ui/core";
+import { LinearProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getProducts } from "../api/products";
 import { ItemList } from "./ItemList";
