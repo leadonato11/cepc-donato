@@ -1,5 +1,5 @@
 import { Button } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
@@ -30,10 +30,6 @@ function ItemCount({ stock, initial, onAdd }) {
 
     const classes = useStyles()
     const [contador, setContador] = useState(initial || 1) // lo mismo a hacer initial ? initial : 1
-
-    useEffect(() => {
-        console.log("Use effect inicial");
-    }, [])
 
     const handleAdd = () => {
         if(contador < stock) {

@@ -1,0 +1,12 @@
+[
+    { "id": 1, "titulo": "Fuark Fit", "descripcion": "Blanco", "precio": 2190, "stock": 10, "imagen": "/assets/images/Cart/01-Fuark-tshirt-white.jpg"},
+    { "id": 2, "titulo": "Fuark Training", "descripcion": "Slim fit negro", "precio": 2350, "stock": 30, "imagen": "/assets/images/Cart/02-Fuark-tshirt-black-withlogo.jpg"},
+    { "id": 3, "titulo": "Fuark Rustic", "descripcion": "Azul oscuro", "precio": 2590, "stock": 18, "imagen": "/assets/images/Cart/03-Fuark-tshirt-black-withlogo02.jpg"},
+    { "id": 4, "titulo": "Fuark Arnold", "descripcion": "Musculosa Blanco", "precio": 1350, "stock": 11, "imagen": "/assets/images/Cart/04-Fuark-muscle-white-arnold1.jpg"},
+    { "id": 5, "titulo": "Fuark Performance FK", "descripcion": "Gris", "precio": 2350, "stock": 24, "imagen": "/assets/images/Cart/05-Fuark-tshirt-grey-premium.jpg"},
+    { "id": 6, "titulo": "Fuark W FK", "descripcion": "Blanco", "precio": 2800, "stock": 8, "imagen": "/assets/images/Cart/06-Fuark-muscle-blue-logo2w.jpg"},
+    { "id": 7, "titulo": "Kit FK Woman", "descripcion": "Rosa", "precio": 6500, "stock": 27, "imagen": "/assets/images/Cart/07-Fuark-muscle-darkblue-logo1w.jpg"},
+    { "id": 8, "titulo": "Fuark W Performance", "descripcion": "Blanco", "precio": 3200, "stock": 4, "imagen": "/assets/images/Cart/08-Fuark-muscle-white-logo3w.jpg"},
+    { "id": 9, "titulo": "Fuark Planet", "descripcion": "Negro", "precio": 2800, "stock": 8, "imagen": "/assets/images/Cart/09-Fuark-muscle-lightblue-logo2w.jpg"},
+    { "id": 10, "titulo": "Fuark Rustic", "descripcion": "Negro", "precio": 2900, "stock": 32, "imagen": "/assets/images/Cart/10-Fuark-muscle-colorjean-logo1w.jpg"}
+]
