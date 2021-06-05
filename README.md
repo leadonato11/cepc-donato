@@ -47,7 +47,7 @@ _Listo! El proyecto lo estarás viendo en un navegador web con la URL:_ **localh
 
 ## Versionado 📌
 
-Utilicé [GIT] para el versionado.
+Utilicé [GIT](https://git-scm.com/) para el versionado.
 Todas las versiones están en [GitHub](https://github.com/leadonato11/cepc-donato).
 
 ## Autores ✒️
