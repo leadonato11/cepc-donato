@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# ECommerce Puro Campeón
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_La tienda ideal para todos aquellos a quien les guste el kick boxing, mma y el boxeo._
 
-## Available Scripts
+### Instalación 🔧
 
-In the project directory, you can run:
+_Para comenzar, debés crear una carpeta en tu equipo y acceder a ella:_
 
-### `npm start`
+```
+mkdir MiCarpeta
+cd MiCarpeta
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_Clonar el repo en esa carpeta con git clone:_
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+git clone https://github.com/leadonato11/cepc-donato.git
+```
 
-### `npm test`
+_Listo! el repo ya está en tu equipo. Ahora tenés que abrirlo con VSC (o el editor de código que uses) e instalar_ **npm**_._
+_Siempre hablando de la carpeta creada por git clone dentro de nuestra carpeta creada:_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+cd MiCarpeta
+cd cepc-donato
+npm install
+```
 
-### `npm run build`
+_Una vez instaladas las dependencias, solo tenemos que iniciar el proyecto:_
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+_Listo! El proyecto lo estarás viendo en un navegador web con la URL:_ **localhost:3000**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Vista Previa 💻
 
-### `npm run eject`
+![Ecommerce Puro Campeón Demo](demo/Animation.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Construido con 🛠️
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* HTML
+* CSS
+* JavaScript
+* [React JS](https://es.reactjs.org/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Versionado 📌
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Utilicé [GIT] para el versionado.
+Todas las versiones están en [GitHub](https://github.com/leadonato11/cepc-donato).
 
-## Learn More
+## Autores ✒️
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_Mis agradecimientos a:_
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* **Ezequiel Barrales** - *Amigo, mentor y guía en este proyecto*
+* **Juan Crego** - *Tutor del curso de React JS*
+* **Coderhouse** - *Institución donde realicé el curso*
 
-### Code Splitting
+## Aun queda mucho por aprender 📄
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+_Este proyecto es solo el inicio del emprendimiento que tengo junto a mi hermano._
+_El camino será largo, pero valdrá la pena._ 💪
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+⌨️ con ❤️ por [Lea Donato](https://github.com/leadonato11) 😊
