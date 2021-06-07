@@ -4,25 +4,15 @@ _La tienda ideal para todos aquellos a quien les guste el kick boxing, mma y el 
 
 ### Instalación 🔧
 
-_Para comenzar, debés crear una carpeta en tu equipo y acceder a ella:_
-
-```
-mkdir MiCarpeta
-cd MiCarpeta
-```
-
-_Clonar el repo en esa carpeta con git clone:_
+_Para comenzar, debés clonar el repo en tu equipo con git clone:_
 
 ```
 git clone https://github.com/leadonato11/cepc-donato.git
 ```
 
 _Listo! el repo ya está en tu equipo. Ahora tenés que abrirlo con VSC (o el editor de código que uses) e instalar_ **npm**_._
-_Siempre hablando de la carpeta creada por git clone dentro de nuestra carpeta creada:_
 
 ```
-cd MiCarpeta
-cd cepc-donato
 npm install
 ```
 
