@@ -1,6 +1,7 @@
 import { Card, Container, Grid, makeStyles, Paper, Typography } from '@material-ui/core';
 import React from 'react';
 import ItemCount from './ItemCount';
+import { handleAdd } from '../utils/helpers'
 
 const useStyles = makeStyles((theme) => ({
     img: {
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 export const ItemDetail = (props) => {
 
     const classes = useStyles()
-
+    
     return (
         <Container>
             <Grid container spacing={3} justify="center">
@@ -56,7 +57,7 @@ export const ItemDetail = (props) => {
                                 <Typography variant="body2" component="p" className={classes.stockText}>
                                     Quedan {props.stock} artículos.
                                 </Typography>
-                                <ItemCount stock={props.stock} />
+                                <ItemCount onAdd={handleAdd} stock={props.stock} />
                             </Card>
                         </Grid>
                     </Grid>
