@@ -2,13 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
-import { handleAdd } from '../utils/helpers'
 
 const useStyles = makeStyles({
   root: {
@@ -23,10 +20,6 @@ const useStyles = makeStyles({
 
 export const Item = ({ id, titulo, descripcion, precio, stock, imagen }) => {
   const classes = useStyles();
-
-/*   const handleAdd = (quantity) => {
-    console.log(`Se agregaron ${quantity} items al carrito`);
-  }; */
 
   return (
     <Card elevation={5} className={classes.root}>
@@ -52,9 +45,6 @@ export const Item = ({ id, titulo, descripcion, precio, stock, imagen }) => {
           </CardContent>
         </CardActionArea>
       </Link>
-      <CardActions>
-        <ItemCount onAdd={handleAdd} stock={stock} />
-      </CardActions>
     </Card>
   );
 };

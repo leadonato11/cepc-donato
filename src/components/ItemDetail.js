@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, Container, Grid, makeStyles, Paper, Typography } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/cartContext';
 import ItemCount from './ItemCount';
 
 const useStyles = makeStyles((theme) => ({
@@ -33,14 +34,14 @@ const useStyles = makeStyles((theme) => ({
 export const ItemDetail = (props) => {
 
     const classes = useStyles()
+    
+    const [ quantity, setQuantity ] = useState(null)
+    const {addItem} = useContext(CartContext)
 
     const handleAdd = (qty) => {
+        addItem(props.id, qty)
         setQuantity(qty)
     }
-
-    const [ quantity, setQuantity ] = useState(null)
-
-    
     
     return (
         <Container>
