@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
+import { Cart } from "./components/Cart";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route exact path="/item/:id">
             <ItemDetailContainer />
+          </Route>
+          <Route exact path="/cart">
+            <Cart />
           </Route>
         </Switch>
       </div>

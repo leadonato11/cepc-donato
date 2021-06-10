@@ -8,7 +8,7 @@ export const getProducts = () => {
     return new Promise ((resolve) => {
         setTimeout(() => {
           resolve(ProductList)
-        }, 2000);
+        });
     })
 }
 
@@ -19,6 +19,6 @@ export const getProduct = (id) => {
       setTimeout(() => {
         const product = ProductList.find(product => product.id === id)
         resolve(product)
-      }, 2000);
+      });
   })
 }
