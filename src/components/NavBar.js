@@ -89,9 +89,9 @@ export default function NavBar() {
               <img className={classes.img} src={logo} alt="logo" />
             </Link>
           </IconButton>
-          <IconButton color="inherit">
+          <Link to="/cart" className={classes.link}>
             <CartWidget />
-          </IconButton>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>
