@@ -21,13 +21,16 @@ const useStyles = makeStyles((theme) => ({
         fontStyle: "italic",
     },
     title: {
-        margin: "20px 0 0"
+        margin: "20px 0 0",
+        textTransform: "uppercase"
     },
     cardLink: {
         textDecoration: "none",
         color: "inherit",
     },
-
+    wrapper: {
+        margin: "40px 0"
+    }
   }));
 
 
@@ -44,7 +47,7 @@ export const ItemDetail = (props) => {
     }
     
     return (
-        <Container>
+        <Container className={classes.wrapper} spacing={3}>
             <Grid container spacing={3} justify="center">
                 <Grid item xs={5}>
                     <Grid container spacing={4}>

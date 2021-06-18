@@ -8,5 +8,5 @@
     { "id": 7, "titulo": "Kit FK Woman", "descripcion": "Rosa", "precio": 6500, "stock": 27, "imagen": "/assets/images/Cart/07-Fuark-muscle-darkblue-logo1w.jpg"},
     { "id": 8, "titulo": "Fuark W Performance", "descripcion": "Blanco", "precio": 3200, "stock": 4, "imagen": "/assets/images/Cart/08-Fuark-muscle-white-logo3w.jpg"},
     { "id": 9, "titulo": "Fuark Planet", "descripcion": "Negro", "precio": 2800, "stock": 8, "imagen": "/assets/images/Cart/09-Fuark-muscle-lightblue-logo2w.jpg"},
-    { "id": 10, "titulo": "Fuark Rustic", "descripcion": "Negro", "precio": 2900, "stock": 32, "imagen": "/assets/images/Cart/10-Fuark-muscle-colorjean-logo1w.jpg"}
+    { "id": 10, "titulo": "Fuark W Rustic", "descripcion": "Negro", "precio": 2900, "stock": 32, "imagen": "/assets/images/Cart/10-Fuark-muscle-colorjean-logo1w.jpg"}
 ]

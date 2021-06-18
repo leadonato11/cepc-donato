@@ -10,7 +10,7 @@ export const ItemDetailContainer = (props) => {
   const { id } = useParams() //Obtengo el nro de id de la url
 
   useEffect(() => {
-    getProduct(parseInt(id)).then((response) => {
+    getProduct(id).then((response) => {
       console.log(response);
       setProduct(response);
     });

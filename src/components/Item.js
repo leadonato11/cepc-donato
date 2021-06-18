@@ -15,6 +15,9 @@ const useStyles = makeStyles({
   cardLink: {
     textDecoration: "none",
     color: "inherit",
+  },
+  title: {
+    textTransform: "uppercase",
   }
 });
 
@@ -33,10 +36,10 @@ export const Item = ({ id, titulo, descripcion, precio, stock, imagen }) => {
             title={titulo}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography className={classes.title} gutterBottom variant="h5" component="h2">
               {titulo}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography className={classes.title} variant="body2" color="textSecondary" component="p">
               {descripcion}
             </Typography>
             <Typography variant="h6" color="primary" component="p">

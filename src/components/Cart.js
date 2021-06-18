@@ -9,6 +9,7 @@ import { LinearProgress, Container } from "@material-ui/core";
 const useStyles = makeStyles({
   btnVaciar: {
     marginTop: 20,
+    marginBottom: 20,
   },
   btnLink: {
     textDecoration: "none",
@@ -55,7 +56,7 @@ export const Cart = () => {
       {loading && <LinearProgress />}
       {!loading && (
         <Container maxWidth="md">
-          <h2>Este es el carrito de compras</h2>
+          <h2>Este es tu carrito de compras :)</h2>
           {cartEmpty ? (
             <>
               <p>Aquí no hay nada!</p>
