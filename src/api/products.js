@@ -1,5 +1,3 @@
-
-import ProductList from "../data/products.json"
 import { getFirestore, getFromStorage } from '../firebase';
 
 
