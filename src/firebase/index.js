@@ -3,7 +3,7 @@ import '@firebase/firestore';
 import '@firebase/storage'
 
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyCbtSEa1jSa9Iw9o-XR-cmL-2UtGC9cK1U",
+    apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
     authDomain: "ce-puro-campeon.firebaseapp.com",
     projectId: "ce-puro-campeon",
     storageBucket: "gs://ce-puro-campeon.appspot.com",
