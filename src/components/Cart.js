@@ -70,8 +70,8 @@ export const Cart = () => {
       items: ordenItems,
       total: totalPrice
     }
-    createOrder(ordenCompra).then(() => {
-      alert("Compra finalizada")
+    createOrder(ordenCompra).then((id) => {
+      alert(`Compra finalizada! El id de tu orden es ${id}`)
       clear()
     }).catch(error => {
       console.log(error)
