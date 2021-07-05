@@ -5,6 +5,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { Cart } from "./components/Cart";
 import { CartProvider } from "./context/cartContext";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -14,12 +15,15 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/products">
               <ItemListContainer />
             </Route>
-            <Route exact path="/category/:id">
+            <Route exact path="/category/:categorySlug">
               <ItemListContainer />
             </Route>
-            <Route exact path="/item/:id">
+            <Route exact path="/product/:id">
               <ItemDetailContainer />
             </Route>
             <Route exact path="/cart">

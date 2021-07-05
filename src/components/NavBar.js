@@ -79,8 +79,17 @@ export default function NavBar() {
               open={open}
               onClose={handleClose}
             >
-              <Link className={classes.link} to="/category/1">
+              <Link className={classes.link} to="/">
+                <MenuItem onClick={handleClose}>Home</MenuItem>
+              </Link>
+              <Link className={classes.link} to="/products">
                 <MenuItem onClick={handleClose}>Productos</MenuItem>
+              </Link>
+              <Link className={classes.link} to="/nosotros">
+                <MenuItem onClick={handleClose}>Nosotros</MenuItem>
+              </Link>
+              <Link className={classes.link} to="/contacto">
+                <MenuItem onClick={handleClose}>Contacto</MenuItem>
               </Link>
             </Menu>
           </div>

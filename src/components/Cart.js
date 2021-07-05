@@ -17,7 +17,6 @@ const useStyles = makeStyles({
 });
 
 export const Cart = () => {
-
   const classes = useStyles();
 
   const { cart, removeItem, clear, cartEmpty } = useContext(CartContext);
@@ -42,41 +41,41 @@ export const Cart = () => {
     });
   }, []);
 
-  
   const totalLines = items.map((item) => {
     return item.totalLine;
   });
-  
-  const totalPrice =
-  totalLines.length > 0
-  ? totalLines.reduce((acumulador, totalLine) => acumulador + totalLine)
-  : 0;
-  
-  function finalizarCompra() {
 
-    const ordenItems = items.map(item => ({
+  const totalPrice =
+    totalLines.length > 0
+      ? totalLines.reduce((acumulador, totalLine) => acumulador + totalLine)
+      : 0;
+
+  function finalizarCompra() {
+    const ordenItems = items.map((item) => ({
       id: item.item.id,
       titulo: item.item.titulo,
       precio: item.item.precio,
-      cantidad: item.quantity
-    }))
+      cantidad: item.quantity,
+    }));
 
     const ordenCompra = {
       buyer: {
         name: "Leandro Donato",
         phone: "123456",
-        email: "lea@lea.com"
+        email: "lea@lea.com",
       },
       items: ordenItems,
-      total: totalPrice
-    }
-    createOrder(ordenCompra).then((id) => {
-      alert(`Compra finalizada! El id de tu orden es ${id}`)
-      clear()
-    }).catch(error => {
-      console.log(error)
-      alert("Error al finalizar la compra")
-    })
+      total: totalPrice,
+    };
+    createOrder(ordenCompra)
+      .then((id) => {
+        alert(`Compra finalizada! El id de tu orden es ${id}`);
+        clear();
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Error al finalizar la compra");
+      });
   }
 
   return (
@@ -89,13 +88,13 @@ export const Cart = () => {
             <>
               <p>Aquí no hay nada!</p>
               <Link className={classes.btnLink} to="/">
-              <Button
-                color="primary"
-                variant="contained"
-                className={classes.btnVaciar}
-              >
-                Ir a la tienda
-              </Button>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  className={classes.btnVaciar}
+                >
+                  Ir a la tienda
+                </Button>
               </Link>
             </>
           ) : (
@@ -121,6 +120,15 @@ export const Cart = () => {
               >
                 Finalizar compra
               </Button>
+              <Link className={classes.btnLink} to="/">
+                <Button
+                  color="primary"
+                  variant="outlined"
+                  className={classes.btnCart}
+                >
+                  Continuar comprando
+                </Button>
+              </Link>
             </>
           )}
         </Container>

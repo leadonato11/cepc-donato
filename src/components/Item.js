@@ -26,7 +26,7 @@ export const Item = ({ id, titulo, descripcion, precio, stock, imagen }) => {
 
   return (
     <Card elevation={5} className={classes.root}>
-      <Link className={classes.cardLink} to={`/item/${id}`}>
+      <Link className={classes.cardLink} to={`/product/${id}`}>
         <CardActionArea>
           <CardMedia
             component="img"

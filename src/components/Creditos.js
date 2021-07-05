@@ -4,10 +4,10 @@ const Creditos = () => {
     return (
         <>
             <h1>
-                Pre entrega Proyecto final de React JS
+                Muchas gracias por tu visita
             </h1>
             <p>
-                Coderhouse Junio 2021
+                Proyecto final Coderhouse Julio 2021
             </p>
         </>
     );

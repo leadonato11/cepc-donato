@@ -7,18 +7,24 @@ import { ItemDetail } from "./ItemDetail";
 export const ItemDetailContainer = (props) => {
   const [product, setProduct] = useState();
 
-  const { id } = useParams() //Obtengo el nro de id de la url
+  const [loading, setLoading] = useState(true);
+
+  const { id } = useParams();
 
   useEffect(() => {
-    getProduct(id).then((response) => {
-      console.log(response);
-      setProduct(response);
-    });
+    getProduct(id)
+      .then((response) => {
+        console.log(response);
+        setProduct(response);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, [id]);
 
   return (
     <div>
-      {product ? (
+      {loading && <LinearProgress />}
+      {product && !loading && (
         <ItemDetail
           id={product.id}
           titulo={product.titulo}
@@ -27,9 +33,8 @@ export const ItemDetailContainer = (props) => {
           precio={product.precio}
           imagen={product.imagen}
         />
-      ) : (
-        <LinearProgress />
       )}
+      {!product && !loading && <p>Este producto no existe!</p>}
     </div>
   );
 };

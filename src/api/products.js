@@ -4,9 +4,10 @@ import { getFirestore, getFromStorage } from '../firebase';
 const db = getFirestore()
 const itemCollection = db.collection("items")
 
-export const getProducts = () => {
+export const getProducts = (categorySlug) => {
+  const consultationQuery = categorySlug ? itemCollection.where("categoria", "==", categorySlug) : itemCollection
     return new Promise ((resolve, reject) => {
-        itemCollection.get().then(querySnapshot => {
+        consultationQuery.get().then(querySnapshot => {
           if (querySnapshot.empty) {
             console.log("No hay productos!!")
           }
