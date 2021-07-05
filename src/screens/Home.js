@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = () => {
+export const Home = () => {
     return (
         <div>
             <h2>
@@ -23,5 +23,3 @@ const Home = () => {
         </div>
     );
 };
-
-export default Home;

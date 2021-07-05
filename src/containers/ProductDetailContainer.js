@@ -1,25 +1,24 @@
 import { LinearProgress } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import { getProduct } from "../api/products";
-import { ItemDetail } from "./ItemDetail";
+import { ItemDetail } from "../components/ItemDetail";
 
-export const ItemDetailContainer = (props) => {
+export const ProductDetailContainer = (props) => {
   const [product, setProduct] = useState();
 
   const [loading, setLoading] = useState(true);
 
-  const { id } = useParams();
+  const { productId } = props;
 
   useEffect(() => {
-    getProduct(id)
+    getProduct(productId)
       .then((response) => {
         console.log(response);
         setProduct(response);
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, [id]);
+  }, [productId]);
 
   return (
     <div>

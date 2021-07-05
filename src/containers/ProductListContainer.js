@@ -1,15 +1,14 @@
 import { LinearProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { getProducts } from "../api/products";
-import { ItemList } from "./ItemList";
+import { ItemList } from "../components/ItemList";
 
-const ItemListContainer = () => {
+export const ProductListContainer = (props) => {
   const [products, setProducts] = useState([]);
 
   const [loading, setLoading] = useState(true);
 
-  const { categorySlug } = useParams()
+  const { categorySlug } = props
 
   useEffect(() => {
     getProducts(categorySlug).then((response) => {
@@ -17,7 +16,7 @@ const ItemListContainer = () => {
       setProducts(response);
       setLoading(false);
     });
-  }, []);
+  }, [categorySlug]);
 
   return (
     <>
@@ -47,5 +46,3 @@ const ItemListContainer = () => {
     </>
   );
 };
-
-export default ItemListContainer;

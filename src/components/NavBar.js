@@ -88,9 +88,6 @@ export default function NavBar() {
               <Link className={classes.link} to="/nosotros">
                 <MenuItem onClick={handleClose}>Nosotros</MenuItem>
               </Link>
-              <Link className={classes.link} to="/contacto">
-                <MenuItem onClick={handleClose}>Contacto</MenuItem>
-              </Link>
             </Menu>
           </div>
           <IconButton className={classes.logo}>

@@ -1,11 +1,13 @@
 import NavBar from "./components/NavBar";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ItemListContainer from "./components/ItemListContainer";
-import { ItemDetailContainer } from "./components/ItemDetailContainer";
-import { Cart } from "./components/Cart";
+import { Cart } from "./screens/Cart";
 import { CartProvider } from "./context/cartContext";
-import Home from "./components/Home";
+import { Home } from "./screens/Home";
+import { Products } from "./screens/Products";
+import { NotFound } from "./screens/NotFound";
+import { ProductDetail } from "./screens/ProductDetail";
+import { Category } from "./screens/Category";
 
 function App() {
   return (
@@ -18,16 +20,19 @@ function App() {
               <Home />
             </Route>
             <Route exact path="/products">
-              <ItemListContainer />
+              <Products />
             </Route>
             <Route exact path="/category/:categorySlug">
-              <ItemListContainer />
+              <Category />
             </Route>
             <Route exact path="/product/:id">
-              <ItemDetailContainer />
+              <ProductDetail />
             </Route>
             <Route exact path="/cart">
               <Cart />
+            </Route>
+            <Route>
+              <NotFound />
             </Route>
           </Switch>
         </div>

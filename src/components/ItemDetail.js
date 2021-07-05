@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { CartContext } from "../context/cartContext";
 import ItemCount from "./ItemCount";
 
@@ -49,6 +50,15 @@ export const ItemDetail = (props) => {
   const { addItem } = useContext(CartContext);
 
   const handleAdd = (qty) => {
+    Swal.fire({
+      icon: "success",
+      title: "¡Producto añadido!",
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+    });
     addItem(props.id, qty);
     setQuantity(qty);
   };
@@ -111,11 +121,8 @@ export const ItemDetail = (props) => {
                           Terminar mi compra
                         </Button>
                       </Link>
-                      <Link className={classes.cardLink} to="/">
-                        <Button
-                          color="primary"
-                          variant="outlined"
-                        >
+                      <Link className={classes.cardLink} to="/products">
+                        <Button color="primary" variant="outlined">
                           Continuar comprando
                         </Button>
                       </Link>

@@ -30,10 +30,6 @@ export const CartProvider = ({children}) => {
 
     const clear = () => setCart([])
 
-    const totalPrice = (() => {
-        
-    })()
-
     const cantItemsInCart = ( () => {
         let acum = 0
         cart.forEach(item => {

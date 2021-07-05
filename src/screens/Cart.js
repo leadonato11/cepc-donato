@@ -3,9 +3,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getProduct } from "../api/products";
 import { CartContext } from "../context/cartContext";
-import { CartList } from "./CartList";
+import { CartList } from "../components/CartList";
 import { LinearProgress, Container } from "@material-ui/core";
 import { createOrder } from "../api/orders";
+import Swal from "sweetalert2";
 
 const useStyles = makeStyles({
   btnCart: {
@@ -39,7 +40,7 @@ export const Cart = () => {
       setItems(cartProducts);
       setLoading(false);
     });
-  }, []);
+  }, [cart]);
 
   const totalLines = items.map((item) => {
     return item.totalLine;
@@ -50,33 +51,98 @@ export const Cart = () => {
       ? totalLines.reduce((acumulador, totalLine) => acumulador + totalLine)
       : 0;
 
-  function finalizarCompra() {
-    const ordenItems = items.map((item) => ({
-      id: item.item.id,
-      titulo: item.item.titulo,
-      precio: item.item.precio,
-      cantidad: item.quantity,
-    }));
+  function confirmarCompra(name, phone, email) {
+    return new Promise((resolve, reject) => {
+      const ordenItems = items.map((item) => ({
+        id: item.item.id,
+        titulo: item.item.titulo,
+        precio: item.item.precio,
+        cantidad: item.quantity,
+      }));
 
-    const ordenCompra = {
-      buyer: {
-        name: "Leandro Donato",
-        phone: "123456",
-        email: "lea@lea.com",
+      const ordenCompra = {
+        buyer: {
+          name,
+          phone,
+          email,
+        },
+        items: ordenItems,
+        total: totalPrice,
+      };
+      createOrder(ordenCompra)
+        .then((id) => {
+          resolve(id);
+        })
+        .catch((error) => {
+          reject();
+          console.log(error);
+        });
+    });
+  }
+
+  function finalizarCompra() {
+    Swal.fire({
+      title: "Finalizar compra",
+      html: `<input id="inputName" class="swal2-input" placeholder="Nombre...">
+        <input id="inputPhone" class="swal2-input" placeholder="Teléfono...">
+        <input id="inputEmail" class="swal2-input" placeholder="Email...">`,
+      showLoaderOnConfirm: true,
+      showCancelButton: true,
+      confirmButtonText: "Finalizar",
+      cancelButtonText: "Cancelar",
+      allowOutsideClick: false,
+      preConfirm: () => {
+        const [name, phone, email] = [
+          document.getElementById("inputName").value,
+          document.getElementById("inputPhone").value,
+          document.getElementById("inputEmail").value,
+        ];
+        return confirmarCompra(name, phone, email);
       },
-      items: ordenItems,
-      total: totalPrice,
-    };
-    createOrder(ordenCompra)
-      .then((id) => {
-        alert(`Compra finalizada! El id de tu orden es ${id}`);
+    })
+      .then((response) => {
+        Swal.fire({
+          title: "Compra finalizada",
+          html: `Tu compra con el código <b>${response.value}</b> fué realizada con éxito`,
+          icon: "success",
+          confirmButtonText: "Aceptar",
+        });
         clear();
       })
-      .catch((error) => {
-        console.log(error);
-        alert("Error al finalizar la compra");
+      .catch(() => {
+        Swal.fire({
+          title: "Error!",
+          text: "Hubo un problema al realizar la compra, por favor intenta más tarde.",
+          icon: "error",
+          confirmButtonText: "Aceptar",
+        });
       });
   }
+
+  function eliminarItem(itemId) {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      icon: "warning",
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+      confirmButtonText: "Si, estoy seguro",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        removeItem(itemId);
+        Swal.fire({
+          icon: "warning",
+          title: "Producto eliminado del carrito",
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
+      }
+    });
+  }
+
+  console.log(items)
 
   return (
     <>
@@ -87,7 +153,7 @@ export const Cart = () => {
           {cartEmpty ? (
             <>
               <p>Aquí no hay nada!</p>
-              <Link className={classes.btnLink} to="/">
+              <Link className={classes.btnLink} to="/products">
                 <Button
                   color="primary"
                   variant="contained"
@@ -101,7 +167,7 @@ export const Cart = () => {
             <>
               <CartList
                 items={items}
-                onRemove={removeItem}
+                onRemove={eliminarItem}
                 totalPrice={totalPrice}
               />
               <Button
@@ -120,7 +186,7 @@ export const Cart = () => {
               >
                 Finalizar compra
               </Button>
-              <Link className={classes.btnLink} to="/">
+              <Link className={classes.btnLink} to="/products">
                 <Button
                   color="primary"
                   variant="outlined"
