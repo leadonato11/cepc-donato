@@ -4,12 +4,9 @@ import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
 import "../styles/NavBar.css";
 
-const CartWidget = () => {
+export const CartWidget = () => {
 
   const {cantItemsInCart} = useContext(CartContext)
-  if (cantItemsInCart === 0) {
-    return null
-  }
   
   return (
     <MenuItem>
@@ -21,5 +18,3 @@ const CartWidget = () => {
     </MenuItem>
   );
 };
-
-export default CartWidget;

@@ -7,7 +7,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import CartWidget from "./CartWidget";
+import { CartWidget } from "./CartWidget";
 import logo from "../assets/images/logo_purocampeon-01.png";
 import { Link } from "react-router-dom";
 
@@ -84,9 +84,6 @@ export default function NavBar() {
               </Link>
               <Link className={classes.link} to="/products">
                 <MenuItem onClick={handleClose}>Productos</MenuItem>
-              </Link>
-              <Link className={classes.link} to="/nosotros">
-                <MenuItem onClick={handleClose}>Nosotros</MenuItem>
               </Link>
             </Menu>
           </div>

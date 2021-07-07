@@ -1,14 +1,40 @@
-import { LinearProgress } from "@material-ui/core";
+import { Card, LinearProgress, makeStyles } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getProducts } from "../api/products";
 import { ItemList } from "../components/ItemList";
+import Skeleton from "react-loading-skeleton";
+import { Paper, Tab, Tabs } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    position: "relative",
+    width: "100%",
+    maxWidth: "1600px",
+    margin: "auto",
+    padding: "30px 0",
+  },
+  skeletonCard: {
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    maxWidth: "345px",
+    alignItems: "center",
+    margin: "auto"
+  },
+  buttonContainer: {},
+}));
 
 export const ProductListContainer = (props) => {
+  const classes = useStyles();
+
+  const history = useHistory()
+
   const [products, setProducts] = useState([]);
 
   const [loading, setLoading] = useState(true);
 
-  const { categorySlug } = props
+  const { categorySlug } = props;
 
   useEffect(() => {
     getProducts(categorySlug).then((response) => {
@@ -18,31 +44,42 @@ export const ProductListContainer = (props) => {
     });
   }, [categorySlug]);
 
+  const handleChange = (event, newValue) => {
+    if (newValue === "todos") {
+      return history.push("/products")
+    }
+    return history.push(`/category/${newValue}`)
+  };
+
+  const tabValue = categorySlug || "todos"
+
   return (
     <>
-      <h2>Nuestra indumentaria para ellos</h2>
-      {!loading ? <ItemList items={products} /> : <LinearProgress />}
-      {products.length === 0 && !loading && <p>Esta categoría no existe!</p>}
-
-      <h2>¿Por qué elegir nuestra indumentaria?</h2>
-      <p>
-        Hoy en día, las remeras para hombre se han convertido en una prenda que
-        debe cumplir ciertos requisitos:
-      </p>
-      <p>Comodidad</p>
-      <p>
-        Normalmente llevamos una vida muy acelerada y no queremos que la
-        transpiración detenga nuestra actividad. Por eso nuestra ropa tiene
-        sistemas que permiten que nuestro cuerpo respire a través de la prenda, aún cuando
-        estamos quietos, sin arruinar nuestro momento.
-      </p>
-      <p>Calidad</p>
-      <p>
-        Es obvio que mientras mas usamos nuestra remera, más desgaste va a
-        sufrir, pero si tu remera posee una tela de calidad, el tiempo no
-        afectará la calidad de tu indumentaria de Puro Campeón
-      </p>
-      <p>EVOLUCIONÁ CON LA INDUMENTARIA DE PURO CAMPEÓN</p>
+    {loading && <LinearProgress />}
+      <div className={classes.root}>
+      {!loading && <div className={classes.buttonContainer}>
+        <Paper className={classes.root}>
+          <Tabs onChange={handleChange} value={tabValue} indicatorColor="primary" textColor="primary" centered>
+            <Tab label="Todos" value="todos" />
+            <Tab label="Ellos" value="ellos" />
+            <Tab label="Ellas" value="ellas" />
+          </Tabs>
+        </Paper>
+      </div>}
+        {!loading && products.length > 0 && categorySlug && (
+          <h2>Nuestra indumentaria para {categorySlug}</h2>
+        )}
+        {!loading && <ItemList items={products} />}
+        {loading && (
+          <Card className={classes.skeletonCard} elevation={5}>
+            <Skeleton height="400px" width="330px" />
+            <Skeleton height="50px" width="330px" />
+            <Skeleton height="20px" width="150px" />
+            <Skeleton height="20px" width="150px" />
+          </Card>
+        )}
+        {products.length === 0 && !loading && <p>Esta categoría no existe!</p>}
+      </div>
     </>
   );
 };

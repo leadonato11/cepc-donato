@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     color: "inherit",
   },
   wrapper: {
-    margin: "40px 0",
+    margin: "40px auto",
   },
 }));
 
@@ -66,7 +66,7 @@ export const ItemDetail = (props) => {
   return (
     <Container className={classes.wrapper} spacing={3}>
       <Grid container spacing={3} justify="center">
-        <Grid item xs={5}>
+        <Grid item xs={12} md={4}>
           <Grid container spacing={4}>
             <Grid item xs>
               <Paper elevation={0}>
@@ -79,7 +79,7 @@ export const ItemDetail = (props) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={5}>
           <Grid container spacing={4}>
             <Grid item xs>
               <Card>

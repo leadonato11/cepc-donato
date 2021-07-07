@@ -8,6 +8,7 @@ import { Products } from "./screens/Products";
 import { NotFound } from "./screens/NotFound";
 import { ProductDetail } from "./screens/ProductDetail";
 import { Category } from "./screens/Category";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
+          <Footer />
         </div>
       </Router>
     </CartProvider>
