@@ -24,7 +24,9 @@ npm start
 
 _Listo! El proyecto lo estarás viendo en un navegador web con la URL:_ **localhost:3000**
 
-## Vista Previa 💻
+_Pss! También lo podés ver en tus dispositivos móviles accediendo a través de la ip de tu equipo y el puerto 3000, por ejemplo:_ **tuIPLocal:3000**
+
+## Una pequeña vista Previa 💻
 
 ![Ecommerce Puro Campeón Demo](demo/Animation.gif)
 
@@ -34,6 +36,8 @@ _Listo! El proyecto lo estarás viendo en un navegador web con la URL:_ **localh
 * CSS
 * JavaScript
 * [React JS](https://es.reactjs.org/)
+
+_Y mucha paciencia..._
 
 ## Versionado 📌
 
