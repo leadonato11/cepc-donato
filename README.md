@@ -26,7 +26,7 @@ _Listo! El proyecto lo estarás viendo en un navegador web con la URL:_ **localh
 
 _Pss! También lo podés ver en tus dispositivos móviles accediendo a través de la ip de tu equipo y el puerto 3000, por ejemplo:_ **tuIPLocal:3000**
 
-## Una pequeña vista Previa 💻
+## Una pequeña vista previa 💻
 
 ![Ecommerce Puro Campeón Demo](demo/Animation.gif)
 
