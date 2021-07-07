@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     objectFit: "cover",
-    objectPosition: "0 -450px"
+    objectPosition: "center center"
   },
 }));
 

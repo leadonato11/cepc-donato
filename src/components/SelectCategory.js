@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginBottom: "35px",
+    fontFamily: "Goldman"
   },
   categoryContainer: {
     display: "flex",
@@ -35,7 +36,7 @@ export const SelectCategory = () => {
       <div className={classes.categoryContainer}>
         <CategoryCard image={MenImage} title="Ellos" link="/category/ellos"/>
         <CategoryCard image={WomenImage} title="Ellas" link="/category/ellas"/>
-        <CategoryCard image={AllImage} title="Todos" link="/products"/>
+        <CategoryCard image={AllImage} title="Todo" link="/products"/>
       </div>
     </section>
   );

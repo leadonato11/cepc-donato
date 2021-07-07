@@ -10,11 +10,20 @@ import Swal from "sweetalert2";
 
 const useStyles = makeStyles({
   btnCart: {
-    margin: "20px 5px",
+    margin: "10px",
   },
   btnLink: {
     textDecoration: "none",
   },
+  btnVaciar: {
+    marginBottom: "30px",
+  },
+  buttons: {
+    padding: "20px 0",
+  },
+  container: {
+    padding: "10px 0",
+  }
 });
 
 export const Cart = () => {
@@ -101,13 +110,15 @@ export const Cart = () => {
       },
     })
       .then((response) => {
-        Swal.fire({
-          title: "Compra finalizada",
-          html: `Tu compra con el código <b>${response.value}</b> fué realizada con éxito`,
-          icon: "success",
-          confirmButtonText: "Aceptar",
-        });
-        clear();
+        if (response.isConfirmed) {
+          Swal.fire({
+            title: "Compra finalizada",
+            html: `Tu compra con el código <b>${response.value}</b> fué realizada con éxito`,
+            icon: "success",
+            confirmButtonText: "Aceptar",
+          });
+          clear();
+        }
       })
       .catch(() => {
         Swal.fire({
@@ -142,7 +153,26 @@ export const Cart = () => {
     });
   }
 
-  console.log(items)
+  function handleClear() {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      icon: "warning",
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+      confirmButtonText: "Si, estoy seguro",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clear();
+        Swal.fire({
+          title: "Se ha vaciado el carrito",
+          icon: "warning",
+          confirmButtonText: "Aceptar",
+        });
+      }
+    });
+  }
+
+  console.log(items);
 
   return (
     <>
@@ -164,38 +194,40 @@ export const Cart = () => {
               </Link>
             </>
           ) : (
-            <>
+            <div className={classes.container}>
               <CartList
                 items={items}
                 onRemove={eliminarItem}
                 totalPrice={totalPrice}
               />
-              <Button
-                color="secondary"
-                variant="contained"
-                className={classes.btnCart}
-                onClick={() => clear()}
-              >
-                Vaciar carrito
-              </Button>
-              <Button
-                color="primary"
-                variant="contained"
-                className={classes.btnCart}
-                onClick={() => finalizarCompra()}
-              >
-                Finalizar compra
-              </Button>
-              <Link className={classes.btnLink} to="/products">
+              <div className={classes.buttons}>
+                <Button
+                  color="secondary"
+                  variant="contained"
+                  className={classes.btnCart}
+                  onClick={handleClear}
+                >
+                  Vaciar carrito
+                </Button>
                 <Button
                   color="primary"
-                  variant="outlined"
+                  variant="contained"
                   className={classes.btnCart}
+                  onClick={() => finalizarCompra()}
                 >
-                  Continuar comprando
+                  Finalizar compra
                 </Button>
-              </Link>
-            </>
+                <Link className={classes.btnLink} to="/products">
+                  <Button
+                    color="primary"
+                    variant="outlined"
+                    className={classes.btnCart}
+                  >
+                    Continuar comprando
+                  </Button>
+                </Link>
+              </div>
+            </div>
           )}
         </Container>
       )}

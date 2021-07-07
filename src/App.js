@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar";
 import "./App.css";
+import "./index.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Cart } from "./screens/Cart";
 import { CartProvider } from "./context/cartContext";

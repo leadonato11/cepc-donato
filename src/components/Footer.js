@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     backgroundColor: "#152548",
     color: "#969696",
-    boxSizing: "border-box"
+    boxSizing: "border-box",
   },
   link: {
     color: "inherit",
@@ -27,7 +27,7 @@ export const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Typography component="p">
-        Trabajo final de Ecommerce para{" "}
+        Proyecto final de Ecommerce para{" "}
         <Link className={classes.link} href="https://www.coderhouse.com/">
           Coderhouse
         </Link>{" "}

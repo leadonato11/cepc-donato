@@ -45,13 +45,13 @@ export const ProductListContainer = (props) => {
   }, [categorySlug]);
 
   const handleChange = (event, newValue) => {
-    if (newValue === "todos") {
+    if (newValue === "todo") {
       return history.push("/products")
     }
     return history.push(`/category/${newValue}`)
   };
 
-  const tabValue = categorySlug || "todos"
+  const tabValue = categorySlug || "todo"
 
   return (
     <>
@@ -60,7 +60,7 @@ export const ProductListContainer = (props) => {
       {!loading && <div className={classes.buttonContainer}>
         <Paper className={classes.root}>
           <Tabs onChange={handleChange} value={tabValue} indicatorColor="primary" textColor="primary" centered>
-            <Tab label="Todos" value="todos" />
+            <Tab label="Todos" value="todo" />
             <Tab label="Ellos" value="ellos" />
             <Tab label="Ellas" value="ellas" />
           </Tabs>

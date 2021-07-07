@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
   wrapper: {
     margin: "40px auto",
   },
+  cardButton: {
+    margin: "3px"
+  }
 }));
 
 export const ItemDetail = (props) => {
@@ -117,12 +120,12 @@ export const ItemDetail = (props) => {
                   ) : (
                     <div>
                       <Link to="/cart" className={classes.cardLink}>
-                        <Button variant="contained" color="primary">
+                        <Button className={classes.cardButton} variant="contained" color="primary">
                           Terminar mi compra
                         </Button>
                       </Link>
                       <Link className={classes.cardLink} to="/products">
-                        <Button color="primary" variant="outlined">
+                        <Button className={classes.cardButton} color="primary" variant="outlined">
                           Continuar comprando
                         </Button>
                       </Link>
